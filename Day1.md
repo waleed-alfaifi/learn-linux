@@ -45,4 +45,23 @@ User applications that are not bundled with the Linux distro are typically insta
 
 Applications can also be installed in `/opt`. For example, avg antivirus might install itself in `/opt/avg` and have directories like `/opt/avg/bin` and `/opt/avg/var`.
 
-Another common pattern is to have /opt/appname/bin, /opt/appname/lib, /etc/opt/appname, and /var/opt/appname folders. For example
+Another common pattern is to have `/opt/appname/bin`, `/opt/appname/lib`, `/etc/opt/appname`, and `/var/opt/appname` folders for an application.
+
+## The Shell
+
+The shell is the default interface to the Linux system. A shell can refer to the CLI or GUI, but usually refers to the CLI.
+
+### Shell Prompt
+
+When shell is started it displays a prompt, which can be something like `[waleed@linuxserver ~]$`. The `$` sign you are running as a normal user as opposed to `#` sign which means you are running as root.
+
+Prompt signs:
+
+- `$` Normal user - e.g. when you login as a normal user
+- `#` Root user - e.g. when you use `sudo` command
+<!-- - `%` Super user - e.g. when you use `su` command to switch to another user -->
+- `~` Home directory - e.g. when you use `cd` command without any arguments
+
+Tilde expansion:
+
+You can use `~` to refer to the home directory, for example `~root` = `/root`, `~waleed` = `/home/waleed`, and so on. Note that `~` refers to home directory which might not live inside the `/home` directory, just as root user's home directory is `/root` and not `/home/root`. Read more about [tilde expansion](https://www.gnu.org/software/bash/manual/html_node/Tilde-Expansion.html).
