@@ -65,3 +65,38 @@ Prompt signs:
 Tilde expansion:
 
 You can use `~` to refer to the home directory, for example `~root` = `/root`, `~waleed` = `/home/waleed`, and so on. Note that `~` refers to home directory which might not live inside the `/home` directory, just as root user's home directory is `/root` and not `/home/root`. Read more about [tilde expansion](https://www.gnu.org/software/bash/manual/html_node/Tilde-Expansion.html).
+
+### Path environment variable
+
+The path environment variable is a list of directories that the shell searches for executable files. For example, when you type `ls` in the shell, the shell will search for `ls` in the directories listed in the path environment variable. If it finds it, it will execute it, otherwise it will display an error message.
+
+This is an example of the path environment variable:
+
+```bash
+echo $PATH
+/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/waleed/.local/bin:/home/waleed/bin
+```
+
+Directories are separated by a colon `:`. So when you type `ls`, the shell will search for `ls` in `/usr/local/bin`, `/usr/bin`, `/usr/local/sbin`, `/usr/sbin`, `/home/waleed/.local/bin`, and `/home/waleed/bin` in that order.
+
+To pretty print the path environment variable, you can use the following command:
+
+```bash
+echo $PATH | tr ':' '\n'
+```
+
+### Man command
+
+Use `man -k SEARCH_TERM` to search for a command. For example, `man -k "list files"` will search for commands that list files.
+
+## Directories
+
+### Directory shortcuts
+
+- `.` refers to the current directory
+- `..` refers to the parent directory
+- `-` refers to the previous directory, for example `cd -` takes you to the previous directory you were in. The `$OLDPWD` environment variable holds the previous directory.
+
+### Creating directories
+
+- `mkdir -p` creates parent directories if they don't exist, e.g. `mkdir -p /dir1/dir2/dir3/dir4` will create dir1, dir2, dir3, and dir4 if they don't exist.
